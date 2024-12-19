@@ -46,7 +46,7 @@ class loadRobotModel():
 
     def getOmi(self):
         for name, oMi in zip(self.model.names, self.data.oMi):
-            if name=='rw_Link' or name=='lw_Link':
+            if name=='L_calf2wheel' or name=='R_calf2wheel':
                 return oMi.translation[0]
     
     def inverse_kinematics(self, x, y, L1=0.215, L2=0.215):
@@ -99,22 +99,22 @@ if __name__=="__main__":
     urdf_path = "bi_urdf/urdf/bi_urdf.urdf"
     robot = loadRobotModel(urdf_path=urdf_path)
     robot.pos = np.array([0., 0., 0., 0., 0., 0., 1., 
-                            1.27, -2.0, 1., 0.,
-                            1.27, -2.0, 1., 0.,])
+                            1.271, -2.12773, 1., 0.,
+                            1.271, -2.12773, 1., 0.,])
 
     com, com_lenth = robot.calculateCom(plot=True)
     print('com', com, com_lenth)
     body_mass = robot.calculateMass()
     print('mass', body_mass)
-    # position = [-0.06167, 0.1206043]
-    # theta1, theta2 = robot.inverse_kinematics(position[0]-(-0.02235), position[1]-0.22494)
-    # robot.pos = np.array([0., 0., 0., 0., 0., 0., 1.,
-    #                         0., theta1+1.57, theta2, 1., 0.,
-    #                         0., theta1+1.57, -theta2, 1., 0.])
-    # print(robot.pos)
-    # com1, com_lenth = robot.calculateCom(plot=True)
-    # print('com1', com1, com_lenth)
-    # print('mass:', robot.calculateMass())
+    position = [-0.043198733199322464, -0.2590763868645426]
+    theta1, theta2 = robot.inverse_kinematics(position[0]-(-0.00026503609363470043), position[1]-(-0.0547752717334901))
+    robot.pos = np.array([0., 0., 0., 0., 0., 0., 1.,
+                            -(theta1+1.57), -theta2, 1., 0.,
+                            -(theta1+1.57), -theta2, 1., 0.])
+    print(robot.pos)
+    com1, com_lenth = robot.calculateCom(plot=True)
+    print('com1', com1, com_lenth)
+    print('mass:', robot.calculateMass())
 
     # # for i in range(100):
     # position[1] -= 0.1
@@ -126,19 +126,20 @@ if __name__=="__main__":
     # print('com2', com2, com_lenth)
 
     
-    # while 1:
-    #     com = robot.calculateCom(plot=False)
-    #     oMi = robot.getOmi()
-    #     diff = oMi - com[0]
-    #     print('diff', diff)
-    #     if abs(diff[0])<0.00001:
-    #         break
-    #     position[0] -= diff[0]/2
-    #     theta1, theta2 = robot.inverse_kinematics(position[0]-(-0.02235), position[1]-0.22494)
-    #     print('theta', theta1, theta2)
-    #     robot.pos = np.array([0., 0., 0., 0., 0., 0., 1.,
-    #                             0., theta1+1.57, theta2, 1., 0.,
-    #                             0., theta1+1.57, -theta2, 1., 0.])
+    while 1:
+        com = robot.calculateCom(plot=False)
+        oMi = robot.getOmi()
+        diff = oMi - com[0]
+        print('diff', diff)
+        if abs(diff[0])<0.00001:
+            break
+        position[0] -= diff[0]/2
+        theta1, theta2 = robot.inverse_kinematics(position[0]-(-0.00026503609363470043), position[1]-(-0.0547752717334901))
+        print('theta', theta1, theta2)
+        robot.pos = np.array([0., 0., 0., 0., 0., 0., 1.,
+                            -(theta1+1.57), -theta2, 1., 0.,
+                            -(theta1+1.57), -theta2, 1., 0.])
 
-    # com4, com_lenth = robot.calculateCom(plot=True)
-    # print('com4', com4, com_lenth)
+    com4, com_lenth = robot.calculateCom(plot=True)
+    print('com4', com4, com_lenth)
+    print('final angle:', -(theta1+1.57), -theta2)
