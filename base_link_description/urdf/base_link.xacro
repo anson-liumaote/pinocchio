@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+<robot name="base_link" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="/home/anson/Desktop/robot/base_link_description/urdf/materials.xacro" />
+<xacro:include filename="/home/anson/Desktop/robot/base_link_description/urdf/base_link.trans" />
+<xacro:include filename="/home/anson/Desktop/robot/base_link_description/urdf/base_link.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.004941877527569569 -0.05029608302029057 -0.030030961139294373" rpy="0 0 0"/>
+    <mass value="1.3096"/>
+    <inertia ixx="0.010338" iyy="0.021048" izz="0.025477" ixy="2e-06" iyz="0.000311" ixz="-1.2e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://base_link_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://base_link_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_lift_v1_1">
+  <inertial>
+    <origin xyz="-0.010393334643797283 -4.598582726417222e-07 4.579328673204319e-08" rpy="0 0 0"/>
+    <mass value="0.0284"/>
+    <inertia ixx="0.000176" iyy="0.0001" izz="0.0001" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.08945 0.052524 0.094931" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://base_link_description/meshes/wheel_lift_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.08945 0.052524 0.094931" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://base_link_description/meshes/wheel_lift_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_right_v1_1">
+  <inertial>
+    <origin xyz="0.010393334643797672 -4.5985860484820673e-07 4.579342778587847e-08" rpy="0 0 0"/>
+    <mass value="0.0284"/>
+    <inertia ixx="0.000176" iyy="0.0001" izz="0.0001" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.07945 0.052524 0.094931" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://base_link_description/meshes/wheel_right_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.07945 0.052524 0.094931" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://base_link_description/meshes/wheel_right_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Revolute 1" type="continuous">
+  <origin xyz="-0.08945 -0.052524 -0.094931" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wheel_lift_v1_1"/>
+  <axis xyz="1.0 -0.0 0.0"/>
+</joint>
+
+<joint name="Revolute 2" type="continuous">
+  <origin xyz="0.07945 -0.052524 -0.094931" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wheel_right_v1_1"/>
+  <axis xyz="1.0 0.0 -0.0"/>
+</joint>
+
+</robot>

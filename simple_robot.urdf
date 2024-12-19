@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<robot name="simple_robot">
+
+  <!-- Link 1 -->
+  <link name="link1">
+    <visual>
+      <geometry>
+        <box size="1 1 1"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <!-- Link 2 -->
+  <link name="link2">
+    <visual>
+      <geometry>
+        <box size="1 1 1"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <!-- Joint between Link 1 and Link 2 -->
+  <joint name="joint1" type="revolute">
+    <parent link="link1"/>
+    <child link="link2"/>
+    <origin xyz="0 0 1"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="1.0" lower="-1.57" upper="1.57" velocity="1.0"/>
+  </joint>
+
+</robot>

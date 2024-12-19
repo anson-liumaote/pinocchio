@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="3degree test platform">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0311197086407892 -0.0204145251191985 0.000924896896361796"
+        rpy="0 0 0" />
+      <mass
+        value="0.61039036366511" />
+      <inertia
+        ixx="0.000435135519969349"
+        ixy="5.92110751523617E-06"
+        ixz="-8.31280092665416E-08"
+        iyy="0.000844122554378993"
+        iyz="-1.76463324002978E-07"
+        izz="0.000521417037543477" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://3degree test platform/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://3degree test platform/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="fl_Link">
+    <inertial>
+      <origin
+        xyz="0.0362395767029127 -0.0121398501384815 -0.000881528506286373"
+        rpy="0 0 0" />
+      <mass
+        value="0.11560667389092" />
+      <inertia
+        ixx="2.76732081187136E-05"
+        ixy="-6.56282969538307E-09"
+        ixz="-3.60918479312612E-07"
+        iyy="2.76822507262423E-05"
+        iyz="-2.55297253815695E-07"
+        izz="3.30828540658261E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://3degree test platform/meshes/fl_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://3degree test platform/meshes/fl_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fl"
+    type="continuous">
+    <origin
+      xyz="0.00723678392728446 0.0485586045266115 -0.0196700000000004"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="fl_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="flu_Link">
+    <inertial>
+      <origin
+        xyz="-0.0265165020995654 -0.026516503711289 -0.00249999999573354"
+        rpy="0 0 0" />
+      <mass
+        value="0.00406221232038081" />
+      <inertia
+        ixx="1.16080374642842E-06"
+        ixy="-1.11891143624946E-06"
+        ixz="9.24909482513556E-13"
+        iyy="1.1608018641751E-06"
+        iyz="9.24941943173796E-13"
+        izz="2.30467945508178E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://3degree test platform/meshes/flu_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://3degree test platform/meshes/flu_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="flu"
+    type="continuous">
+    <origin
+      xyz="0.0524464492407209 -0.024 -0.0209199999999988"
+      rpy="0 0 0" />
+    <parent
+      link="fl_Link" />
+    <child
+      link="flu_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="fld_Link">
+    <inertial>
+      <origin
+        xyz="0.0229815351311272 -0.0229799456975695 -0.00250250463302092"
+        rpy="0 0 0" />
+      <mass
+        value="0.00356358894577057" />
+      <inertia
+        ixx="7.91122356308543E-07"
+        ixy="7.54469385950876E-07"
+        ixz="-5.80053827144257E-13"
+        iyy="7.91255557818437E-07"
+        iyz="2.43987109787925E-13"
+        izz="1.56752946213248E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://3degree test platform/meshes/fld_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://3degree test platform/meshes/fld_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fld"
+    type="continuous">
+    <origin
+      xyz="-0.053033004189764 -0.053033008613312 -0.0049975000000005"
+      rpy="0 0 0" />
+    <parent
+      link="flu_Link" />
+    <child
+      link="fld_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="fr_Link">
+    <inertial>
+      <origin
+        xyz="0.0353657181607637 -0.0121399787446427 0.000881435283078963"
+        rpy="0 0 0" />
+      <mass
+        value="0.115606879207845" />
+      <inertia
+        ixx="2.76728186374306E-05"
+        ixy="3.82696997243698E-09"
+        ixz="-3.378501964664E-07"
+        iyy="2.76818351379137E-05"
+        iyz="2.55279417459229E-07"
+        izz="3.30820470853785E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://3degree test platform/meshes/fr_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://3degree test platform/meshes/fr_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fr"
+    type="continuous">
+    <origin
+      xyz="0.00723678407973238 -0.0485586045266115 -0.0196700000000008"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="fr_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="fru_Link">
+    <inertial>
+      <origin
+        xyz="-0.0265165030387197 -0.0265165045323048 0.00250000000426577"
+        rpy="0 0 0" />
+      <mass
+        value="0.00406221250069797" />
+      <inertia
+        ixx="1.16080869001207E-06"
+        ixy="-1.11891150591471E-06"
+        ixz="9.24909485923803E-13"
+        iyy="1.16079707496863E-06"
+        iyz="9.24941947371285E-13"
+        izz="2.30467960900816E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://3degree test platform/meshes/fru_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://3degree test platform/meshes/fru_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fru"
+    type="continuous">
+    <origin
+      xyz="0.0524464492407211 -0.0239999999999998 0.0209200000000011"
+      rpy="0 0 0" />
+    <parent
+      link="fr_Link" />
+    <child
+      link="fru_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="frd_Link">
+    <inertial>
+      <origin
+        xyz="0.022981633797964 -0.0229799882163145 0.00250249536696708"
+        rpy="0 0 0" />
+      <mass
+        value="0.00356358008962891" />
+      <inertia
+        ixx="7.91115328078481E-07"
+        ixy="7.54462412610955E-07"
+        ixz="-5.80055447102428E-13"
+        iyy="7.91249536329309E-07"
+        iyz="2.43987801444827E-13"
+        izz="1.56751643455364E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://3degree test platform/meshes/frd_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://3degree test platform/meshes/frd_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="frd"
+    type="continuous">
+    <origin
+      xyz="-0.0530330041897637 -0.0530330086133077 0.00499749999999945"
+      rpy="0 0 0" />
+    <parent
+      link="fru_Link" />
+    <child
+      link="frd_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="bl_Link">
+    <inertial>
+      <origin
+        xyz="-0.0353464571678512 -0.0121606254194543 -0.000875200561694968"
+        rpy="0 0 0" />
+      <mass
+        value="0.116495444264729" />
+      <inertia
+        ixx="2.77363489589443E-05"
+        ixy="-3.68573106953368E-09"
+        ixz="-3.37882395303874E-07"
+        iyy="2.78662719891687E-05"
+        iyz="-2.55164688296405E-07"
+        izz="3.32158805188591E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://3degree test platform/meshes/bl_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://3degree test platform/meshes/bl_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bl"
+    type="continuous">
+    <origin
+      xyz="-0.0692103140818918 0.0485586045266112 -0.0196700000000009"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="bl_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="blu_Link">
+    <inertial>
+      <origin
+        xyz="0.026516359289063 -0.0265163614013916 -0.00250000001368499"
+        rpy="0 0 0" />
+      <mass
+        value="0.00406221252110451" />
+      <inertia
+        ixx="1.16080200870849E-06"
+        ixy="1.11890505626067E-06"
+        ixz="-2.65763214325464E-13"
+        iyy="1.16079034172286E-06"
+        iyz="-2.67970507638661E-13"
+        izz="2.30466619430576E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://3degree test platform/meshes/blu_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://3degree test platform/meshes/blu_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="blu"
+    type="continuous">
+    <origin
+      xyz="-0.0524464492407213 -0.024 -0.0209199999999987"
+      rpy="0 0 0" />
+    <parent
+      link="bl_Link" />
+    <child
+      link="blu_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="bld_Link">
+    <inertial>
+      <origin
+        xyz="-0.0229817287808046 -0.0229800828045379 -0.00250249977425093"
+        rpy="0 0 0" />
+      <mass
+        value="0.00356358935166861" />
+      <inertia
+        ixx="7.91121305989071E-07"
+        ixy="-7.54472453255754E-07"
+        ixz="7.29454584347321E-13"
+        iyy="7.91260090690732E-07"
+        iyz="9.46836634742546E-13"
+        izz="1.56753289736021E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://3degree test platform/meshes/bld_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://3degree test platform/meshes/bld_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bld"
+    type="continuous">
+    <origin
+      xyz="0.0530330041897633 -0.0530330086133097 -0.00499750000000075"
+      rpy="0 0 0" />
+    <parent
+      link="blu_Link" />
+    <child
+      link="bld_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="br_Link">
+    <inertial>
+      <origin
+        xyz="-0.0362137061797602 -0.0121607563146248 0.000875117597896019"
+        rpy="0 0 0" />
+      <mass
+        value="0.116495592825284" />
+      <inertia
+        ixx="2.77359509563257E-05"
+        ixy="6.70303708263331E-09"
+        ixz="-3.60932664637954E-07"
+        iyy="2.78658252077998E-05"
+        iyz="2.55147422966239E-07"
+        izz="3.32150550189634E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://3degree test platform/meshes/br_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://3degree test platform/meshes/br_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="br"
+    type="continuous">
+    <origin
+      xyz="-0.0692103139294439 -0.0485586045266115 -0.0196700000000008"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="br_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="bru_Link">
+    <inertial>
+      <origin
+        xyz="0.0265163583499024 -0.0265163605803621 0.00249999998631462"
+        rpy="0 0 0" />
+      <mass
+        value="0.00406221234078735" />
+      <inertia
+        ixx="1.16079706512389E-06"
+        ixy="1.1189049865944E-06"
+        ixz="-2.65763218628106E-13"
+        iyy="1.16079513092825E-06"
+        iyz="-2.67970502655769E-13"
+        izz="2.30466604037735E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://3degree test platform/meshes/bru_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://3degree test platform/meshes/bru_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bru"
+    type="continuous">
+    <origin
+      xyz="-0.052446449240721 -0.0239999999999998 0.0209200000000011"
+      rpy="0 0 0" />
+    <parent
+      link="br_Link" />
+    <child
+      link="bru_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="brd_Link">
+    <inertial>
+      <origin
+        xyz="-0.0229816301139911 -0.0229800402856714 0.00250250022574768"
+        rpy="0 0 0" />
+      <mass
+        value="0.00356359820780952" />
+      <inertia
+        ixx="7.91128334247562E-07"
+        ixy="-7.54479426643104E-07"
+        ixz="7.29454678506929E-13"
+        iyy="7.91266112246435E-07"
+        iyz="9.46836684121223E-13"
+        izz="1.56754592503405E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://3degree test platform/meshes/brd_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://3degree test platform/meshes/brd_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="brd"
+    type="continuous">
+    <origin
+      xyz="0.0530330041897634 -0.0530330086133066 0.00499749999999945"
+      rpy="0 0 0" />
+    <parent
+      link="bru_Link" />
+    <child
+      link="brd_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+</robot>

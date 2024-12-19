@@ -1,0 +1,81 @@
+<?xml version="1.0" ?>
+<robot name="wheel_leg_robot">
+
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.004941874117411725 -0.04886952250339052 -0.04017035328774482" rpy="0 0 0"/>
+    <mass value="4.632300667035083"/>
+    <inertia ixx="0.012853" iyy="0.023925" izz="0.025114" ixy="2e-06" iyz="-0.001311" ixz="-1.4e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="/home/anson/Desktop/pinocchio/wheel_leg_v2_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="/home/anson/Desktop/pinocchio/wheel_leg_v2_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_right_v1_1">
+  <inertial>
+    <origin xyz="0.010393334643797672 -3.666097424942505e-07 3.212575757916003e-07" rpy="0 0 0"/>
+    <mass value="0.3890337211730212"/>
+    <inertia ixx="0.000176" iyy="0.0001" izz="0.0001" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.07945 0.043831 0.138541" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="/home/anson/Desktop/pinocchio/wheel_leg_v2_description/meshes/wheel_right_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.07945 0.043831 0.138541" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="/home/anson/Desktop/pinocchio/wheel_leg_v2_description/meshes/wheel_right_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_lift_v1_1">
+  <inertial>
+    <origin xyz="-0.010393334643797325 -3.6660941037103267e-07 3.2125743468225387e-07" rpy="0 0 0"/>
+    <mass value="0.3890337211730148"/>
+    <inertia ixx="0.000176" iyy="0.0001" izz="0.0001" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.08945 0.043831 0.138541" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="/home/anson/Desktop/pinocchio/wheel_leg_v2_description/meshes/wheel_lift_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.08945 0.043831 0.138541" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="/home/anson/Desktop/pinocchio/wheel_leg_v2_description/meshes/wheel_lift_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="wheel_right_joint" type="continuous">
+  <origin xyz="0.07945 -0.043831 -0.138541" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wheel_right_v1_1"/>
+  <axis xyz="1.0 0.0 -0.0"/>
+</joint>
+
+<joint name="wheel_left_joint" type="continuous">
+  <origin xyz="-0.08945 -0.043831 -0.138541" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wheel_lift_v1_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+</robot>

@@ -1,0 +1,31 @@
+full_controller:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Position Controllers --------------------------------------
+  hipjoint_right_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: hipjoint_right
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  hipjoint_left _position_controller:
+    type: effort_controllers/JointPositionController
+    joint: hipjoint_left 
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  wheeljoint_right_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: wheeljoint_right
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  wheeljoint_left_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: wheeljoint_left
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  kneejoint_right_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: kneejoint_right
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  kneejoint_left_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: kneejoint_left
+    pid: {p: 100.0, i: 0.01, d: 10.0}
