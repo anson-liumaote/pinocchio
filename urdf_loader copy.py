@@ -90,17 +90,18 @@ class loadRobotModel():
     def calculateMass(self):
         body_mass = 0
         for name, inertia, oMi in zip(self.model.names, self.model.inertias, self.data.oMi):
+                print(name, inertia.mass)
                 body_mass += inertia.mass
         return body_mass
     
 
 if __name__=="__main__":
     # urdf_path = "base_link_description/urdf/base_link.urdf"
-    urdf_path = "bi_urdf/urdf/bi_urdf.urdf"
+    urdf_path = "bi_urdf/urdf/bi_urdf_6dof.urdf"
     robot = loadRobotModel(urdf_path=urdf_path)
     robot.pos = np.array([0., 0., 0., 0., 0., 0., 1., 
-                            1.271, -2.12773, 1., 0.,
-                            1.271, -2.12773, 1., 0.,])
+                            0., 1.271, -2.12773, 1., 0.,
+                            0., 1.271, -2.12773, 1., 0.,])
 
     com, com_lenth = robot.calculateCom(plot=True)
     print('com', com, com_lenth)
@@ -109,8 +110,8 @@ if __name__=="__main__":
     position = [-0.043198733199322464, -0.2590763868645426]
     theta1, theta2 = robot.inverse_kinematics(position[0]-(-0.00026503609363470043), position[1]-(-0.0547752717334901))
     robot.pos = np.array([0., 0., 0., 0., 0., 0., 1.,
-                            -(theta1+1.57), -theta2, 1., 0.,
-                            -(theta1+1.57), -theta2, 1., 0.])
+                            0., -(theta1+1.57), -theta2, 1., 0.,
+                            0., -(theta1+1.57), -theta2, 1., 0.])
     print(robot.pos)
     com1, com_lenth = robot.calculateCom(plot=True)
     print('com1', com1, com_lenth)
@@ -137,8 +138,8 @@ if __name__=="__main__":
         theta1, theta2 = robot.inverse_kinematics(position[0]-(-0.00026503609363470043), position[1]-(-0.0547752717334901))
         print('theta', theta1, theta2)
         robot.pos = np.array([0., 0., 0., 0., 0., 0., 1.,
-                            -(theta1+1.57), -theta2, 1., 0.,
-                            -(theta1+1.57), -theta2, 1., 0.])
+                            0., -(theta1+1.57), -theta2, 1., 0.,
+                            0., -(theta1+1.57), -theta2, 1., 0.])
 
     com4, com_lenth = robot.calculateCom(plot=True)
     print('com4', com4, com_lenth)

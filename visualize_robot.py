@@ -20,9 +20,9 @@ viz.loadViewerModel()
 
 # Display the robot at its initial configuration
 q0 = pin.neutral(model)
-q0 =  np.array([0., 0., 0., 0., 0., 0., 1., 
-                1.27, -2.0, 1., 0.,
-                1.27, -2.0, 1., 0.,])
+# q0 =  np.array([0., 0., 0., 0., 0., 0., 1., 
+#                 1.27, -2.0, 1., 0.,
+#                 1.27, -2.0, 1., 0.,])
 # q0 = pin.utils.zero(model.nq)1
 viz.display(q0)
 print(q0)

@@ -19,6 +19,7 @@ class loadRobotModel():
         # Update frame placements
         pin.updateFramePlacements(self.model, self.data)
 
+        # Calculate the center of mass (COM) relative to the base frame
         com = pin.centerOfMass(self.model, self.data)
         plt.plot(com[0], com[2], marker = 'x')
 
@@ -90,6 +91,7 @@ class loadRobotModel():
     def calculateMass(self):
         body_mass = 0
         for name, inertia, oMi in zip(self.model.names, self.model.inertias, self.data.oMi):
+                print(name, inertia.mass)
                 body_mass += inertia.mass
         return body_mass
     
