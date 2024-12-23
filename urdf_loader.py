@@ -32,15 +32,18 @@ class loadRobotModel():
         
 
 
-        for name, oMi in zip(self.model.names, self.data.oMi):
+        for name, oMi, inertia in zip(self.model.names, self.data.oMi, self.model.inertias):
             # print('trans', oMi.translation)
-            # if name=='battery':
-            #     continue
-            plt.scatter(oMi.translation[0], oMi.translation[2]) 
+            if name=='universe':
+                continue
+            world_com = oMi.act(inertia.lever)  # Transform local CoM to world frame
+            plt.scatter(oMi.translation[0], oMi.translation[2], label=name)
+            plt.scatter(world_com[0], world_com[2], marker='*', label=name) 
             print(name, oMi.translation[0], oMi.translation[2]) 
         
         if plot:
             plt.axis('equal')
+            plt.legend()
             plt.show()
         
         return com, com_lenth

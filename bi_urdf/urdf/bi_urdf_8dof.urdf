@@ -54,17 +54,17 @@
     name="orin_Link">
     <inertial>
       <origin
-        xyz="-0.11589 -0.00301 -0.06043"
+        xyz="-0.02408 0.02189 0.05730"
         rpy="0 0 0" />
       <mass
         value="0.3" />
       <inertia
-        ixx="0.00166804201"
-        ixy="0.00011159300"
-        ixz="0.00209936068"
-        iyy="0.00544430491"
-        iyz="0.00006735551"
-        izz="0.00436559892" />
+        ixx="0.00169870356"
+        ixy="-0.00015111217"
+        ixz="-0.00041542219"
+        iyy="0.00147844807"
+        iyz="0.00038916625"
+        izz="0.00065122384" />
     </inertial>
     <visual>
       <origin
@@ -107,17 +107,17 @@
     name="bat_Link">
     <inertial>
       <origin
-        xyz="-0.01301 0.00224 -0.15741"
+        xyz="0.02860 0.00224 0.02251"
         rpy="0 0 0" />
       <mass
         value="0.672" />
       <inertia
-        ixx="0.01716082946"
-        ixy="-0.00007406882"
-        ixz="0.00137593403"
-        iyy="0.01790777770"
-        iyz="-0.00023653965"
-        izz="0.00156126730" />
+        ixx="0.00085048156"
+        ixy="-0.00001152336"
+        ixz="0.00043231469"
+        iyy="0.00203345215"
+        iyz="0.00003388068"
+        izz="0.00199728964"/>
     </inertial>
     <visual>
       <origin
@@ -160,17 +160,17 @@
     name="r_Link">
     <inertial>
       <origin
-        xyz="-0.07425 -0.05625 -0.05478"
+        xyz="-0.02073 0.00000 0.00000"
         rpy="0 0 0" />
       <mass
         value="0.536" />
       <inertia
-        ixx="0.00385840237"
-        ixy="0.00223851348"
-        ixz="0.00217989897"
-        iyy="0.00490117750"
-        iyz="0.00165143864"
-        izz="0.00497878575" />
+        ixx="0.00055434936"
+        ixy="-0.00000001582"
+        ixz="0.00000000503"
+        iyy="0.00056855215"
+        iyz="-0.00000000650"
+        izz="0.00055851307"/>
     </inertial>
     <visual>
       <origin
@@ -213,17 +213,17 @@
     name="rr_Link">
     <inertial>
       <origin
-        xyz="-0.00438 -0.05542 -0.05478"
+        xyz="0.04914 0.00083 0.00000"
         rpy="0 0 0" />
       <mass
         value="0.573" />
       <inertia
-        ixx="0.00383568778"
-        ixy="0.00013811236"
-        ixz="0.00013731680"
-        iyy="0.00239093643"
-        iyz="0.00173931666"
-        izz="0.00219709425" />
+        ixx="0.00035721873"
+        ixy="0.00002268056"
+        ixz="-0.00000005422"
+        iyy="0.00204430103"
+        iyz="-0.00000000125"
+        izz="0.00181053200" />
     </inertial>
     <visual>
       <origin
@@ -251,7 +251,7 @@
   </link>
   <joint
     name="R_base2hip"
-    type="fixed">
+    type="revolute">
     <origin
       xyz="0 0 0"
       rpy="0 0 0" />
@@ -261,22 +261,27 @@
       link="rr_Link" />
     <axis
       xyz="1 0 0" />
+    <limit
+      lower="0.0"
+      upper="0.0"
+      effort="0.0"
+      velocity="0.0" />
   </joint>
   <link
     name="rrr_Link">
     <inertial>
       <origin
-        xyz="-0.00024 -0.10799 -0.05471"
+        xyz="0.00003 -0.03730 0.00006"
         rpy="0 0 0" />
       <mass
         value="0.614" />
       <inertia
-        ixx="0.00945726496"
-        ixy="0.00001600371"
-        ixz="0.00000542533"
-        iyy="0.00249493205"
-        iyz="0.00362498764"
-        izz="0.00764470258"/>
+        ixx="0.00131289621"
+        ixy="-0.00000028386"
+        ixz="-0.00000248157"
+        iyy="0.00065691561"
+        iyz="-0.00000428299"
+        izz="0.00133828329"/>
     </inertial>
     <visual>
       <origin
@@ -303,8 +308,8 @@
     </collision>
   </link>
   <joint
-    name="R_thigh_fix"
-    type="fixed">
+    name="R_hip2thigh"
+    type="revolute">
     <origin
       xyz="0.0532497748906444 -0.0144424855132765 0"
       rpy="0 0 0" />
@@ -314,22 +319,27 @@
       link="rrr_Link" />
     <axis
       xyz="0 1 0" />
+    <limit
+      lower="0.0"
+      upper="1.57"
+      effort="23.7"
+      velocity="30.0" />
   </joint>
   <link
     name="ru_Link">
     <inertial>
       <origin
-        xyz="-0.00031 -0.14157 -0.12137"
+        xyz="-0.00005 -0.01317 -0.06660"
         rpy="0 0 0" />
       <mass
         value="0.509" />
       <inertia
-        ixx="0.02061237381"
-        ixy="0.00002202123"
-        ixz="0.00002107744"
-        iyy="0.01058887989"
-        iyz="0.00875093742"
-        izz="0.01049155470" />
+        ixx="0.00525901222"
+        ixy="-0.00000006948"
+        ixz="0.00000342732"
+        iyy="0.00534816854"
+        iyz="0.00045156221"
+        izz="0.00037880824" />
     </inertial>
     <visual>
       <origin
@@ -356,38 +366,33 @@
     </collision>
   </link>
   <joint
-    name="R_hip2thigh"
+    name="R_thigh_fix"
     type="fixed">
     <origin
       xyz="0 -0.0577075781855466 0"
-      rpy="0 1.2164473167519347 0" />
+      rpy="0 0 0" />
     <parent
       link="rrr_Link" />
     <child
       link="ru_Link" />
     <axis
       xyz="0 1 0" />
-    <!-- <limit
-      lower="0.0"
-      upper="1.57"
-      effort="23.7"
-      velocity="30.0" /> -->
   </joint>
   <link
     name="rd_Link">
     <inertial>
       <origin
-        xyz="-0.00024 -0.14959 -0.42253"
+        xyz="0.00002 -0.02119 -0.15275"
         rpy="0 0 0" />
       <mass
         value="0.555" />
       <inertia
-        ixx="0.11532470912"
-        ixy="0.00002022234"
-        ixz="0.00005874163"
-        iyy="0.10294684138"
-        iyz="0.03531163220"
-        izz="0.01264523627" />
+        ixx="0.07912920088"
+        ixy="-0.00000017460"
+        ixz="-0.00000272469"
+        iyy="0.07892173375"
+        iyz="0.00455705638"
+        izz="0.00047477095" />
     </inertial>
     <visual>
       <origin
@@ -415,37 +420,37 @@
   </link>
   <joint
     name="R_thigh2calf"
-    type="fixed">
+    type="revolute">
     <origin
       xyz="0 0 -0.214999999999999"
-      rpy="0 -2.139803613507067 0" />
+      rpy="0 0 0" />
     <parent
       link="ru_Link" />
     <child
       link="rd_Link" />
     <axis
       xyz="0 1 0" />
-    <!-- <limit
+    <limit
       lower="-2.61"
       upper="0.0"
       effort="23.7"
-      velocity="30.0" /> -->
+      velocity="30.0" />
   </joint>
   <link
     name="rw_Link">
     <inertial>
       <origin
-        xyz="-0.00027 -0.17228 -0.48478"
+        xyz="0.00000 -0.01520 0.00000"
         rpy="0 0 0" />
       <mass
-        value="0.280" />
+        value="0.0" />
       <inertia
-        ixx="0.07457085746"
-        ixy="0.00001278481"
-        ixz="0.00003597494"
-        iyy="0.06668599518"
-        iyz="0.02338459699"
-        izz="0.00876875684" />
+        ixx="0.00052305084"
+        ixy="0.00000000000"
+        ixz="-0.00000035000"
+        iyy="0.00088385874"
+        iyz="-0.00000014000"
+        izz="0.00052304732" />
     </inertial>
     <visual>
       <origin
@@ -488,17 +493,17 @@
     name="l_Link">
     <inertial>
       <origin
-        xyz="-0.07425 0.05625 -0.05478"
+        xyz="-0.02073 0.00000 0.00000"
         rpy="0 0 0" />
       <mass
         value="0.536" />
       <inertia
-        ixx="0.00385839628"
-        ixy="-0.00223851548"
-        ixz="0.00217989254"
-        iyy="0.00490116608"
-        iyz="-0.00165142968"
-        izz="0.00497879081" />
+        ixx="0.00055434856"
+        ixy="0.00000001553"
+        ixz="0.00000000306"
+        iyy="0.00056854986"
+        iyz="0.00000001264"
+        izz="0.00055851452" />
     </inertial>
     <visual>
       <origin
@@ -541,17 +546,17 @@
     name="ll_Link">
     <inertial>
       <origin
-        xyz="-0.00438 0.05542 -0.05478"
+        xyz="0.04914 -0.00083 0.00000"
         rpy="0 0 0" />
       <mass
         value="0.573" />
       <inertia
-        ixx="0.00383572240"
-        ixy="-0.00013818708"
-        ixz="0.00013738311"
-        iyy="0.00239093628"
-        iyz="-0.00173932479"
-        izz="0.00219705608" />
+        ixx="0.00035724030"
+        ixy="-0.00002267980"
+        ixz="-0.00000007079"
+        iyy="0.00204413821"
+        iyz="-0.00000000009"
+        izz="0.00181035052"/>
     </inertial>
     <visual>
       <origin
@@ -579,7 +584,7 @@
   </link>
   <joint
     name="L_base2hip"
-    type="fixed">
+    type="revolute">
     <origin
       xyz="0 0 0"
       rpy="0 0 0" />
@@ -589,22 +594,27 @@
       link="ll_Link" />
     <axis
       xyz="1 0 0" />
+    <limit
+      lower="0.0"
+      upper="0.0"
+      effort="0.0"
+      velocity="0.0" />
   </joint>
   <link
     name="lll_Link">
     <inertial>
       <origin
-        xyz="-0.00023 0.10799 -0.05471"
+        xyz="0.00003 0.03730 0.00006"
         rpy="0 0 0" />
       <mass
         value="0.614" />
       <inertia
-        ixx="0.00945717399"
-        ixy="-0.00001578284"
-        ixz="0.00000524000"
-        iyy="0.00249493047"
-        iyz="-0.00362501369"
-        izz="0.00764450217" />
+        ixx="0.00131284561"
+        ixy="0.00000036570"
+        ixz="-0.00000255948"
+        iyy="0.00065685338"
+        iyz="0.00000425719"
+        izz="0.00133818598"/>
     </inertial>
     <visual>
       <origin
@@ -631,8 +641,8 @@
     </collision>
   </link>
   <joint
-    name="L_thigh_fix"
-    type="fixed">
+    name="L_hip2thigh"
+    type="revolute">
     <origin
       xyz="0.0532497748906447 0.0144424855132758 0"
       rpy="0 0 0" />
@@ -642,22 +652,27 @@
       link="lll_Link" />
     <axis
       xyz="0 1 0" />
+    <limit
+      lower="0.0"
+      upper="1.57"
+      effort="23.7"
+      velocity="30.0" />
   </joint>
   <link
     name="lu_Link">
     <inertial>
       <origin
-        xyz="-0.00031 0.14157 -0.12137"
+        xyz="-0.00005 0.01317 -0.06659"
         rpy="0 0 0" />
       <mass
         value="0.509" />
       <inertia
-        ixx="0.02061220484"
-        ixy="-0.00002207751"
-        ixz="0.00002110824"
-        iyy="0.01058873621"
-        iyz="-0.00875083739"
-        izz="0.01049154602" />
+        ixx="0.00525893053"
+        ixy="0.00000006649"
+        ixz="0.00000343554"
+        iyy="0.00534809715"
+        iyz="-0.00045155031"
+        izz="0.00037881411" />
     </inertial>
     <visual>
       <origin
@@ -684,38 +699,33 @@
     </collision>
   </link>
   <joint
-    name="L_hip2thigh"
+    name="L_thigh_fix"
     type="fixed">
     <origin
       xyz="0 0.0577075781855487 0"
-      rpy="0 1.2164473167519347 0" />
+      rpy="0 0 0" />
     <parent
       link="lll_Link" />
     <child
       link="lu_Link" />
     <axis
       xyz="0 1 0" />
-    <!-- <limit
-      lower="0.0"
-      upper="1.57"
-      effort="23.7"
-      velocity="30.0" /> -->
   </joint>
   <link
     name="ld_Link">
     <inertial>
       <origin
-        xyz="-0.00024 0.14959 -0.42253"
+        xyz="0.00002 0.02119 -0.15276"
         rpy="0 0 0" />
       <mass
         value="0.555" />
       <inertia
-        ixx="0.11532533580"
-        ixy="-0.00002018862"
-        ixz="0.00005861271"
-        iyy="0.10294753695"
-        iyz="-0.03531167285"
-        izz="0.01264518379" />
+        ixx="0.01701980935"
+        ixy="0.00000017682"
+        ixz="-0.00000009639"
+        iyy="0.01681236184"
+        iyz="-0.00202828700"
+        izz="0.00047476800" />
     </inertial>
     <visual>
       <origin
@@ -743,37 +753,37 @@
   </link>
   <joint
     name="L_thigh2calf"
-    type="fixed">
+    type="revolute">
     <origin
       xyz="0 0 -0.215"
-      rpy="0 -2.139803613507067 0" />
+      rpy="0 0 0" />
     <parent
       link="lu_Link" />
     <child
       link="ld_Link" />
     <axis
       xyz="0 1 0" />
-    <!-- <limit
+    <limit
       lower="-2.61"
       upper="0.0"
       effort="23.7"
-      velocity="30.0" /> -->
+      velocity="30.0" />
   </joint>
   <link
     name="lw_Link">
     <inertial>
       <origin
-        xyz="-0.00027 0.17228 -0.48478"
+        xyz="0.00000 0.01520 0.00000"
         rpy="0 0 0" />
       <mass
-        value="0.280" />
+        value="0.0" />
       <inertia
-        ixx="0.07457085723"
-        ixy="-0.00001278479"
-        ixz="0.00003597588"
-        iyy="0.06668599063"
-        iyz="-0.02338459699"
-        izz="0.00876875253" />
+        ixx="0.00052305061"
+        ixy="0.00000000000"
+        ixz="0.00000000066"
+        iyy="0.00088385420"
+        iyz="0.00000000014"
+        izz="0.00052304301" />
     </inertial>
     <visual>
       <origin

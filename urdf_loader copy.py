@@ -31,15 +31,19 @@ class loadRobotModel():
         
 
 
-        for name, oMi in zip(self.model.names, self.data.oMi):
+        for name, oMi, inertia in zip(self.model.names, self.data.oMi, self.model.inertias):
             # print('trans', oMi.translation)
-            # if name=='battery':
-            #     continue
-            plt.scatter(oMi.translation[0], oMi.translation[2]) 
+            if name=='universe':
+                continue
+            world_com = oMi.act(inertia.lever)  # Transform local CoM to world frame
+            plt.scatter(oMi.translation[0], oMi.translation[2], label=name)
+            plt.scatter(world_com[0], world_com[2], marker='*', label=name) 
             print(name, oMi.translation[0], oMi.translation[2]) 
+            print(name, world_com[0], world_com[2]) 
         
         if plot:
             plt.axis('equal')
+            plt.legend()
             plt.show()
         
         return com, com_lenth
@@ -97,7 +101,7 @@ class loadRobotModel():
 
 if __name__=="__main__":
     # urdf_path = "base_link_description/urdf/base_link.urdf"
-    urdf_path = "bi_urdf/urdf/bi_urdf_6dof.urdf"
+    urdf_path = "bi_urdf/urdf/bi_urdf_8dof.urdf"
     robot = loadRobotModel(urdf_path=urdf_path)
     robot.pos = np.array([0., 0., 0., 0., 0., 0., 1., 
                             0., 1.271, -2.12773, 1., 0.,
@@ -116,17 +120,6 @@ if __name__=="__main__":
     com1, com_lenth = robot.calculateCom(plot=True)
     print('com1', com1, com_lenth)
     print('mass:', robot.calculateMass())
-
-    # # for i in range(100):
-    # position[1] -= 0.1
-    # theta1, theta2 = robot.inverse_kinematics(position[0]-(-0.02235), position[1]-0.22494)
-    # robot.pos = np.array([0., 0., 0., 0., 0., 0., 1.,
-    #                         0., theta1+1.57, theta2, 1., 0.,
-    #                         0., theta1+1.57, -theta2, 1., 0.])
-    # com2, com_lenth = robot.calculateCom(plot=True)
-    # print('com2', com2, com_lenth)
-
-    
     while 1:
         com = robot.calculateCom(plot=False)
         oMi = robot.getOmi()

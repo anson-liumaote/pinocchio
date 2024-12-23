@@ -5,7 +5,7 @@ import numpy as np
 
 # Load the URDF model
 model_path = os.path.dirname(os.path.abspath(__file__))
-urdf_path = os.path.join(model_path, "bi_urdf/urdf/bi_urdf.urdf")
+urdf_path = os.path.join(model_path, "bi_urdf/urdf/bi_urdf_6dof.urdf")
 model, collision_model, visual_model = pin.buildModelsFromUrdf(urdf_path, model_path)
 
 # Create data required for the algorithms
