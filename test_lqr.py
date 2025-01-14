@@ -8,13 +8,13 @@ import urdf_loader
 
 class InvertedPendulumLQR:
     # def __init__(self, hip, knee, l_bar=3.0, M=0.48, m=2*(0.06801+0.07172)+0.45376, g=9.8, Q=None, R=None, delta_t=1/50, sim_time=15.0, show_animation=True):
-    def __init__(self,l_bar=None, M=0.695, m=None, g=9.8, Q=None, R=None, delta_t=1/300, sim_time=3.3, show_animation=True):    
+    def __init__(self,l_bar=None, M=0.28, m=None, g=9.8, Q=None, R=None, delta_t=1/150, sim_time=3.0, show_animation=True):    
     # transform isaac sim angle to com.py angle
-        urdf_path = "big bipedal robot v1/urdf/big bipedal robot v1.urdf"
+        urdf_path = "crazydog/urdf/robotv2_6dof.urdf"
         robot = urdf_loader.loadRobotModel(urdf_path=urdf_path)
-        robot.pos = np.array([0., 0., 0., 0., 0., 0., 1.,
-                            0., -1.18, 2.0, 1., 0.,
-                            0., -1.18, 2.0, 1., 0.])
+        robot.pos = np.array([0., 0., 0., 0., 0., 0., 1., 
+                                1.321, -2.134, 1., 0.,
+                                1.321, -2.134, 1., 0.,])
         self.com, self.l_bar = robot.calculateCom(plot=False)
         print(self.l_bar)
         self.M = M  # mass of the cart [kg]self.R = R if R is not None else np.diag([0.1])  # input cost matrix
@@ -22,7 +22,7 @@ class InvertedPendulumLQR:
         self.g = g  # gravity [m/s^2]
         self.nx = 4  # number of states
         self.nu = 1  # number of inputs
-        self.wheel_r = 0.08
+        self.wheel_r = 0.07
         self.Q = Q if Q is not None else np.diag([0, 1.0, 1.0, 1.0])  # state cost matrix , best in IsaacSim
         self.R = R if R is not None else np.diag([1e-6])  # input cost matrix
 
@@ -197,8 +197,8 @@ class InvertedPendulumLQR:
 if __name__ == '__main__':
     
     # for i in range(1, 11):
-    Q = np.diag([100., 1., 100.0, 0.1])
-    R = np.diag([2.5]) 
+    Q = np.diag([100., 10., 100.0, 0.1])
+    R = np.diag([25.]) 
     lqr = InvertedPendulumLQR(Q = Q, R=R)
     lqr.main()
 

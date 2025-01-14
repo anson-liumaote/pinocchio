@@ -1,0 +1,868 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="crazydog">
+  <link name="dummy_link"/>  
+  <joint name="dummy_joint" type="floating">
+    <parent link="dummy_link"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.06214 -0.00054 0.06779"
+        rpy="0 0 0" />
+      <mass
+        value="2.214" />
+      <inertia
+        ixx="0.02069164485"
+        ixy="0.00023474428"
+        ixz="-0.00785270783"
+        iyy="0.04356034977"
+        iyz="-0.00005561398"
+        izz="0.03457865399" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://crazydog/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://crazydog/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="orin_Link">
+      <inertial>
+        <origin
+          xyz="-0.01930 0.05663 0.02065"
+          rpy="0 0 0" />
+        <mass
+          value="0.300" />
+        <inertia
+          ixx="0.00144869941"
+          ixy="-0.00031634298"
+          ixz="-0.00012276365"
+          iyy="0.00055394520"
+          iyz="0.00035951431"
+          izz="0.00165301683" />
+      </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://crazydog/meshes/orin_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://crazydog/meshes/orin_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="orin"
+    type="fixed">
+    <origin
+      xyz="0.017899999999997 -0.0521499999999896 0.138300000000021"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="orin_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="bat_Link">
+    <inertial>
+      <origin
+        xyz="0.02067 -0.06839 0.06374"
+        rpy="0 0 0" />
+      <mass
+        value="0.672" />
+      <inertia
+        ixx="0.00711125557"
+        ixy="-0.00095114141"
+        ixz="0.00088927121"
+        iyy="0.00396581723"
+        iyz="-0.00296428728"
+        izz="0.00393199356" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://crazydog/meshes/bat_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://crazydog/meshes/bat_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bat"
+    type="fixed">
+    <origin
+      xyz="0.058950000003876 0.0727389463301006 0.0227476714243632"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="bat_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="r_Link">
+    <inertial>
+      <origin
+        xyz="-0.02157 -0.01000 0.00000"
+        rpy="0 0 0" />
+      <mass
+        value="0.536" />
+      <inertia
+        ixx="0.00060793670"
+        ixy="0.00011558529"
+        ixz="0.00000883"
+        iyy="0.00058746412"
+        iyz="-0.00000494"
+        izz="0.00063100958" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://crazydog/meshes/r_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://crazydog/meshes/r_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R_hip_fix"
+    type="fixed">
+    <origin
+      xyz="-0.0518500000000023 -0.0449999999990881 0.0646505434665986"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="r_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="rr_Link">
+    <inertial>
+      <origin
+        xyz="0.05066 -0.00900 0.00000"
+        rpy="0 0 0" />
+      <mass
+        value="0.573" />
+      <inertia
+        ixx="0.00040372551"
+        ixy="-0.00026582134"
+        ixz="0.00004388"
+        iyy="0.00210825359"
+        iyz="-0.00000196"
+        izz="0.00192077322" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://crazydog/meshes/rr_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://crazydog/meshes/rr_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R_base2hip"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="r_Link" />
+    <child
+      link="rr_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="rrr_Link">
+    <inertial>
+      <origin
+        xyz="0.00000 -0.04237 0.00000"
+        rpy="0 0 0" />
+      <mass
+        value="0.614" />
+      <inertia
+        ixx="0.00153715736"
+        ixy="0.00001279"
+        ixz="-0.00520284"
+        iyy="0.00066390170"
+        iyz="0.00003363"
+        izz="0.00155997855" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://crazydog/meshes/rrr_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://crazydog/meshes/rrr_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R_hip2thigh"
+    type="revolute">
+    <origin
+      xyz="0.0532500000000038 -0.0234965472817495 0"
+      rpy="0 0 0" />
+    <parent
+      link="rr_Link" />
+    <child
+      link="rrr_Link" />
+    <axis
+      xyz="0 0.999999999994352 0" />
+    <limit
+      lower="0.0"
+      upper="1.57"
+      effort="23.7"
+      velocity="30.0" />
+  </joint>
+  <link
+    name="ru_Link">
+    <inertial>
+      <origin
+        xyz="-0.00522 -0.04538 -0.06493"
+        rpy="0 0 0" />
+      <mass
+        value="0.509" />
+      <inertia
+        ixx="0.00610249132"
+        ixy="0.00012368056"
+        ixz="0.00017397906"
+        iyy="0.00522184002"
+        iyz="0.00157883075"
+        izz="0.00148210677" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://crazydog/meshes/ru_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://crazydog/meshes/ru_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R_thigh_fix"
+    type="fixed">
+    <origin
+      xyz="0 -0.0399999999997176 0"
+      rpy="0 0 0" />
+    <parent
+      link="rrr_Link" />
+    <child
+      link="ru_Link" />
+    <axis
+      xyz="0 0.999999999994352 0" />
+  </joint>
+  <link
+    name="rd_Link">
+    <inertial>
+      <origin
+        xyz="-0.00002 -0.03974 -0.15275"
+        rpy="0 0 0" />
+      <mass
+        value="0.555" />
+      <inertia
+        ixx="0.01764701135"
+        ixy="0.00045536"
+        ixz="0.00024260"
+        iyy="0.01681223570"
+        iyz="0.00360095700"
+        izz="0.00110212502" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://crazydog/meshes/rd_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://crazydog/meshes/rd_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R_thigh2calf"
+    type="revolute">
+    <origin
+      xyz="0 -0.00370423901864644 -0.214999987551507"
+      rpy="0 0 0" />
+    <parent
+      link="ru_Link" />
+    <child
+      link="rd_Link" />
+    <axis
+      xyz="0 0.999999999994352 0" />
+    <limit
+      lower="-2.61"
+      upper="0.0"
+      effort="23.7"
+      velocity="30.0" />
+  </joint>
+  <link
+    name="rw_Link">
+    <inertial>
+      <origin
+        xyz="0.00000 -0.02520 0.00000"
+        rpy="0 0 0" />
+      <mass
+        value="0.0" />
+      <inertia
+        ixx="0.00063615797"
+        ixy="0.00000000"
+        ixz="-0.00000070"
+        iyy="0.00088385875"
+        iyz="0.00000084"
+        izz="0.00063615445" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://crazydog/meshes/rw_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://crazydog/meshes/rw_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R_calf2wheel"
+    type="continuous">
+    <origin
+      xyz="0 -0.0372314027426527 -0.214999874868891"
+      rpy="0 0 0" />
+    <parent
+      link="rd_Link" />
+    <child
+      link="rw_Link" />
+    <axis
+      xyz="0 0.999999999994352 0" />
+  </joint>
+  <link
+    name="l_Link">
+    <inertial>
+      <origin
+        xyz="-0.02157 -0.01000 0.00000"
+        rpy="0 0 0" />
+      <mass
+        value="0.536" />
+      <inertia
+        ixx="0.00060796606"
+        ixy="0.00011561532"
+        ixz="0.00000705"
+        iyy="0.00058746127"
+        iyz="0.00001334"
+        izz="0.00063104152" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://crazydog/meshes/l_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://crazydog/meshes/l_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L_hip_fix"
+    type="fixed">
+    <origin
+      xyz="-0.0518500000000022 0.0650000000000014 0.0646505434669769"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="l_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="ll_Link">
+    <inertial>
+      <origin
+        xyz="0.05067 -0.01100 0.00000"
+        rpy="0 0 0" />
+      <mass
+        value="0.573" />
+      <inertia
+        ixx="0.00042667077"
+        ixy="-0.00031479758"
+        ixz="-0.00001596"
+        iyy="0.00210835291"
+        iyz="0.00000221"
+        izz="0.00194374478" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://crazydog/meshes/ll_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://crazydog/meshes/ll_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L_base2hip"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="l_Link" />
+    <child
+      link="ll_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="lll_Link">
+    <inertial>
+      <origin
+        xyz="0.00000 0.04237 0.00000"
+        rpy="0 0 0" />
+      <mass
+        value="0.614" />
+      <inertia
+        ixx="0.00153719555"
+        ixy="-0.00000836"
+        ixz="-0.000520423"
+        iyy="0.00066391046"
+        iyz="-0.00003396"
+        izz="0.00155996700" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://crazydog/meshes/lll_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://crazydog/meshes/lll_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L_hip2thigh"
+    type="revolute">
+    <origin
+      xyz="0.0532500000000048 0.00349654728109326 0"
+      rpy="0 0 0" />
+    <parent
+      link="ll_Link" />
+    <child
+      link="lll_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0.0"
+      upper="1.57"
+      effort="23.7"
+      velocity="30.0" />
+  </joint>
+  <link
+    name="lu_Link">
+    <inertial>
+      <origin
+        xyz="-0.00522 0.02538 -0.06493"
+        rpy="0 0 0" />
+      <mass
+        value="0.509" />
+      <inertia
+        ixx="0.00538198328"
+        ixy="-0.00007050637"
+        ixz="0.00017400430"
+        iyy="0.00522186135"
+        iyz="-0.00091779265"
+        izz="0.00076175038" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://crazydog/meshes/lu_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://crazydog/meshes/lu_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L_thigh_fix"
+    type="fixed">
+    <origin
+      xyz="0 0.06 0"
+      rpy="0 0 0" />
+    <parent
+      link="lll_Link" />
+    <child
+      link="lu_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="ld_Link">
+    <inertial>
+      <origin
+        xyz="-0.00002 0.01974 -0.15275"
+        rpy="0 0 0" />
+      <mass
+        value="0.555" />
+      <inertia
+        ixx="0.01698659436"
+        ixy="-0.00016940"
+        ixz="0.00011999"
+        iyy="0.01681207565"
+        iyz="-0.00190536647"
+        izz="0.00044182490" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://crazydog/meshes/ld_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://crazydog/meshes/ld_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L_thigh2calf"
+    type="revolute">
+    <origin
+      xyz="0 0.00370351641772967 -0.214999999999999"
+      rpy="0 0 0" />
+    <parent
+      link="lu_Link" />
+    <child
+      link="ld_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-2.61"
+      upper="0.0"
+      effort="23.7"
+      velocity="30.0" />
+  </joint>
+  <link
+    name="lw_Link">
+    <inertial>
+      <origin
+        xyz="0.00 0.00520 0.00"
+        rpy="0 0 0" />
+      <mass
+        value="0.0" />
+      <inertia
+        ixx="0.00046594348"
+        ixy="0.00000000"
+        ixz="0.00000031"
+        iyy="0.00088385419"
+        iyz="0.00000005"
+        izz="0.00046593588" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://crazydog/meshes/lw_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://crazydog/meshes/lw_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L_calf2wheel"
+    type="continuous">
+    <origin
+      xyz="0 0.0372306801421323 -0.215000000000002"
+      rpy="0 0 0" />
+    <parent
+      link="ld_Link" />
+    <child
+      link="lw_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="dock_Link">
+    <inertial>
+      <origin
+        xyz="-0.05710 0.01966 -0.04198"
+        rpy="0 0 0" />
+      <mass
+        value="0.900" />
+      <inertia
+        ixx="0.00426074253"
+        ixy="-0.00125466743"
+        ixz="0.00232332840"
+        iyy="0.00602495727"
+        iyz="-0.00078374613"
+        izz="0.00590970314" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://crazydog/meshes/dock_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://crazydog/meshes/dock_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="dock"
+    type="fixed">
+    <origin
+      xyz="-0.12333718930912 -0.0399999999999873 0.11565"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="dock_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+</robot>
